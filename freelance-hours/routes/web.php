@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\ProjectsController;
 use Illuminate\Support\Facades\Route;
-//controller invokle, tem essa forma de chamada, pois só tem apenas 1 metodo
-Route::get('/', WelcomeController::class);
+
+Route::get('/', [ProjectsController::class, 'index'])->name('projects.index');
+Route::get('/project/{project}', [ProjectsController::class, 'show'])->name('projects.show');
